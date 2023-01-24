@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx lite-server"
+    "start": "npx lite-server",
+    "build:src": "npx copyfiles -u 1 src/**/*.{html,js} dist",
+    "build:bs": "npx copyfiles -u 4 node_modules/bootstrap/dist/css/bootstrap.css dist",
+    "build": "npm-run-all buil:src build:bs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "npm-run-all": "^4.1.5"
   }
 }
